@@ -8,7 +8,7 @@ function getComputerChoice(listaOpcoes) {
 
 
 function playerLose(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase();
+    playerSelection = playerSelection.toLowerCase().trim();
     computerSelection = computerSelection.toLowerCase();
     if (
         (playerSelection == "rock" && computerSelection == "paper")
@@ -63,9 +63,9 @@ function restartGame() {
     playerPoints = 0;
     computerPoints = 0;
     document.querySelector('#rounds').innerHTML = ' ';
-    document.querySelector('#scoreboard_text').innerHTML = '';
-    document.querySelector('#result_text').innerHTML = '';
-    document.querySelector('#selection').innerHTML = '';
+    document.querySelector('#scoreboard_text').innerHTML = ' ';
+    document.querySelector('#result_text').innerHTML = ' ';
+    document.querySelector('#selection').innerHTML = '  ';
 
 }
 
@@ -80,7 +80,7 @@ let submissionCount = 0;
 document.querySelector("form").onsubmit = () => {
     countRounds();
     if (submissionCount < 5) {
-        const playerSelection = document.querySelector("#choice").value.toLowerCase();
+        const playerSelection = document.querySelector("#choice").value.toLowerCase().trim();
 
         if (playerSelection != "paper" && playerSelection != "rock" && playerSelection != "scissors") {
 
@@ -142,10 +142,9 @@ document.querySelector("form").onsubmit = () => {
 
         restart.addEventListener("click", () => {
             restartGame();
-            document.querySelector('.scoreboard').remove(restart);
             document.querySelector('.submit_button').disabled = false;
-            document.querySelector("#choice").value = '';
-
+            document.querySelector('.scoreboard').remove(restart);
+            
         })
     }
     return false;
