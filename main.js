@@ -5,29 +5,36 @@ function getComputerChoice(listaOpcoes) {
     const indice = Math.floor(Math.random() * 3);
     return listaOpcoes[indice];
 }
-function playRound(playerSelection, computerSelection){
+
+
+function playerLose(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
-    var youLose = (playerSelection == "rock" && computerSelection == "paper") 
-                  || (playerSelection == "paper" && computerSelection == "scissors") 
-                  || (playerSelection == "scissors" && computerSelection == "rock");
-    if(youLose){
+    if (
+        (playerSelection == "rock" && computerSelection == "paper")
+        || (playerSelection == "paper" && computerSelection == "scissors")
+        || (playerSelection == "scissors" && computerSelection == "rock")
+    ) {
+        return true;
+    } else if (playerSelection == computerSelection) {
+        return "draw"
+    }
+}
+
+
+function playRound(playerSelection, computerSelection) {
+
+    let youLose = playerLose(playerSelection, computerSelection);
+    if (youLose == "draw") {
+        return `It's a draw!`
+    }
+
+    else if (youLose) {
         return `You Lose! ${computerSelection} beats ${playerSelection}`
     }
-    else if (playerSelection == computerSelection){
-        return `It's a draw! Your choice was ${playerSelection} and the computer's choice was also  ${computerSelection}`
-    }
-    else{
+    else if (!youLose) {
         return `You Won! ${playerSelection} beats ${computerSelection} `
     }
 
 }
 
-let compChoice =  getComputerChoice(opcoes);
-let playerChoice = "scissors";
-
-
-console.log("Computer's choice: " + compChoice);
-console.log("Your choice: " + playerChoice);
-console.log("_______ Game_____")
-console.log(playRound(playerChoice, compChoice));
