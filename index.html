@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Rock Paper Scissors</title>
-        <script src="main.js"></script>
-    </head>
-    <body>
-        
 
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="shortcut icon" href="RPS_logo.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <section class="main_section">
+        <div class="container">
+            <h1 class="gameTitle">Rock Paper Scissors</h1>
+            <img src="RPS_logo.jpeg" alt="" id="gameImage">
+
+            <form action="">
+                <input type="text" name="" placeholder="Rock, paper or scissors?" id="choice">
+                <input type="submit" value="Submit" class="submit_button">
+            </form>
+
+            <div class="scoreboard">
+                <p id="scoreboard_text"></p>
+                <p id="rounds"></p>
+                <p id="result_text"></p>
+
+                <p id="selection"></p>
+
+            </div>
+        </div>
+    </section>
+    <script src="main.js"></script>
+</body>
+
 </html>
