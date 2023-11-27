@@ -134,6 +134,10 @@ document.querySelector("form").onsubmit = () => {
             winner = "You lose! The computer is the winner";
         }
         document.querySelector('#result_text').innerHTML = "The rounds are over! <br>" + winner;
+        var restart = document.createElement('button');
+        restart.textContent = "Play again!"
+        restart.classList.add('restart_btn')
+        document.querySelector('.scoreboard').append(restart);
 
     }
     return false;
