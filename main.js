@@ -139,6 +139,14 @@ document.querySelector("form").onsubmit = () => {
         restart.classList.add('restart_btn')
         document.querySelector('.scoreboard').append(restart);
 
+
+        restart.addEventListener("click", () => {
+            restartGame();
+            document.querySelector('.scoreboard').remove(restart);
+            document.querySelector('.submit_button').disabled = false;
+            document.querySelector("#choice").value = '';
+
+        })
     }
     return false;
 }
