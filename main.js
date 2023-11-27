@@ -58,6 +58,16 @@ function countRounds() {
 //     }
 // }
 // game()
+function restartGame() {
+    numberOfRounds = 0;
+    playerPoints = 0;
+    computerPoints = 0;
+    document.querySelector('#rounds').innerHTML = ' ';
+    document.querySelector('#scoreboard_text').innerHTML = '';
+    document.querySelector('#result_text').innerHTML = '';
+    document.querySelector('#selection').innerHTML = '';
+
+}
 
 let numberOfRounds = 0;
 let playerPoints = 0;
