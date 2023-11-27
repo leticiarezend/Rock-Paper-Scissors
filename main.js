@@ -84,7 +84,7 @@ document.querySelector("form").onsubmit = () => {
 
         if (playerSelection != "paper" && playerSelection != "rock" && playerSelection != "scissors") {
 
-            alert("Opção invalida")
+            alert("Invalid option!")
             const keepPlaceholder = document.querySelector("#choice").value;
             keepPlaceholder.style.color = gray;
             keepPlaceholder.value = '';
