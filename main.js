@@ -37,4 +37,18 @@ function playRound(playerSelection, computerSelection) {
     }
 
 }
+function game() {
 
+    let computerPoints = 0;
+    let playerPoints = 0;
+    for (let i = 0; i < 5; i++) {
+        let compChoice = getComputerChoice(opcoes);
+        let playerChoice = prompt(" ");
+
+        console.log(`Round ${i + 1}/5`);
+        console.log("Computer's choice: " + compChoice);
+        console.log("Your choice: " + playerChoice);
+        console.log(playRound(playerChoice, compChoice,playerPoints, computerPoints));
+    }
+}
+game()
